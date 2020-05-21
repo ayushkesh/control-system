@@ -1,0 +1,18 @@
+* C:\Users\varsh\OneDrive\Desktop\New folder (3)\es17btech11002.asc
+R1 N001 0 1k
+R2 Vout N001 2030
+V1 Vcc 0 15
+V2 0 -Vcc 15
+XU1 N002 N001 Vcc -Vcc Vout LM741/NS
+R3 N002 0 10
+R4 Vout N003 10
+C1 N003 0 0.01m
+C2 N003 N002 0.01m
+.tran 0.01 0.05 UIC
+.include LM741.MOD
+.control
+run
+wrdata es17btech11002.dat V(Vout)
+*plot V(Vout)
+.endc
+.end
